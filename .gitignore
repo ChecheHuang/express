@@ -34,3 +34,4 @@ src/utils/serverLog.json
 prisma/routes.json
 .env*
 public
+prisma/dev.db

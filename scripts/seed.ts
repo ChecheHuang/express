@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt'
 const prismadb = new PrismaClient()
 const reset = async () => {
   await prismadb.user.deleteMany()
+  await prismadb.todo.deleteMany()
 }
 
 const userSeed = async () => {
@@ -20,10 +21,12 @@ const todoSeed = async () => {
       {
         title: 'todo1',
         content: 'content',
+        status: true,
       },
       {
         title: 'todo2',
         content: 'content2',
+        status: true,
       },
     ],
   })
