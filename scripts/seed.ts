@@ -7,11 +7,25 @@ const reset = async () => {
 }
 
 const userSeed = async () => {
-  const create = await prismadb.user.create({
+  await prismadb.user.create({
     data: {
       account: 'account',
       password: await bcrypt.hash('password', 12),
     },
+  })
+}
+const todoSeed = async () => {
+  await prismadb.todo.createMany({
+    data: [
+      {
+        title: 'todo1',
+        content: 'content',
+      },
+      {
+        title: 'todo2',
+        content: 'content2',
+      },
+    ],
   })
 }
 
@@ -21,6 +35,7 @@ async function main() {
     console.log('reset done')
     console.log('Start seeding ...')
     await userSeed()
+    await todoSeed()
     console.log('Seeding finished ...')
   } catch (err) {
     console.log(err)

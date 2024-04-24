@@ -10,19 +10,19 @@ authRouter.post(
           #swagger.description = '登入' */
   async (req, res, next) => {
     const loginSchema = z.object({
-      idNumber: z.string(),
-      licensePlate: z.string(),
+      id: z.string(),
+      account: z.string(),
     })
     /*  #swagger.parameters['obj'] = {
                   in: 'body',
                   required: true,
                   schema: {
-                            "idNumber": "idNumber",
-                            "licensePlate": "licensePlate"
+                            "id": "id",
+                            "account": "account"
                           }
           } */
     try {
-      const { idNumber, licensePlate } = loginSchema.parse(req.body)
+      const { id, account } = loginSchema.parse(req.body)
       const user = await prismadb.user.findFirst({
         select: {
           id: true,
