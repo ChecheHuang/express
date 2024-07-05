@@ -1,3 +1,4 @@
+import tokenMiddleware from '@/middleware/tokenMiddleware'
 import prismadb from '@/utils/prismadb'
 import { catchError } from '@/utils/utils'
 import { Router } from 'express'
@@ -6,7 +7,7 @@ const todoRouter = Router()
 todoRouter.get(
   '/',
   /* 	#swagger.tags = ['Todo']
-          #swagger.description = '獲取全部' */
+  #swagger.description = '獲取全部' */
   async (req, res, next) => {
     const todos = await prismadb.todo.findMany({
       select: {
@@ -103,7 +104,12 @@ todoRouter.put(
 todoRouter.delete(
   '/:id',
   /* 	#swagger.tags = ['Todo']
-#swagger.description = '刪除' */ catchError(async (req, res, next) => {
+#swagger.description = '刪除' */
+  tokenMiddleware,
+  /* #swagger.security = [{
+          "apiKeyAuth": []
+  }] */
+  catchError(async (req, res, next) => {
     const { id } = req.params
     //  #swagger.parameters['id'] = { description: 'todo id' }
     const todo = await prismadb.todo.delete({
