@@ -14,7 +14,6 @@ dist-ssr
 *.local
 
 # Editor directories and files
-.vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -23,15 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-build-prod.sh
 
-src/router/router.tsx
 
 src/swagger.json
-.env.production
 src/utils/output.json
 src/utils/serverLog.json
-prisma/routes.json
-.env*
 public
 prisma/dev.db

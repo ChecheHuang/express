@@ -2,8 +2,13 @@ import fs from 'fs'
 import path from 'path'
 
 export function serverLog(this: any, data?: any) {
-  const filePath = path.join(__dirname, 'serverLog.json')
+  const logsDir = path.join(__dirname, '../../logs')
+  const filePath = path.join(logsDir, 'serverLog.json')
   const jsonString = JSON.stringify(data ? data : this, null, 2)
+
+  if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir, { recursive: true })
+  }
 
   fs.writeFile(filePath, jsonString, (err) => {
     if (err) {
@@ -19,4 +24,5 @@ declare global {
     cuslog: (data?: any) => void
   }
 }
+
 console.cuslog = serverLog
