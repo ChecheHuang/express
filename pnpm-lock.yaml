@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@prisma/client':
-    specifier: ^5.11.0
+    specifier: ^5.16.1
     version: 5.16.1(prisma@5.16.1)
   bcrypt:
     specifier: ^5.1.1
@@ -113,7 +113,7 @@ devDependencies:
     specifier: ^3.2.4
     version: 3.2.4(prettier@3.3.2)(typescript@5.5.3)
   prisma:
-    specifier: ^5.11.0
+    specifier: ^5.16.1
     version: 5.16.1
   swagger-autogen:
     specifier: ^2.23.7
