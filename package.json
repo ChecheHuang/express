@@ -16,7 +16,7 @@
     "db:push": "prisma db push && prisma generate",
     "postinstall": "prisma generate",
     "db:reset": "npx prisma migrate reset && npm run db:push  && npm run db:seed",
-    "swagger": "ts-node src/utils/swagger.ts"
+    "swagger": "ts-node scripts/swagger.ts"
   },
   "keywords": [],
   "author": "",

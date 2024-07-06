@@ -1,5 +1,5 @@
 import swaggerAutogen from 'swagger-autogen'
-import { PORT } from '../config'
+import { PORT } from '../src/config'
 
 const doc = {
   info: {
@@ -20,7 +20,7 @@ const doc = {
   definitions: {},
 }
 
-const outputFile = '../swagger.json'
-const endpointsFiles = ['../server.ts']
+const outputFile = '../src/swagger.json'
+const endpointsFiles = ['../src/server.ts']
 
 swaggerAutogen(outputFile, endpointsFiles, doc)

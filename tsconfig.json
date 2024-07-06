@@ -17,6 +17,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "scripts/swagger.ts"],
   "exclude": ["node_modules", "dist"]
 }
