@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 
 import chalk from 'chalk'
 import { SERVER_ADDRESS } from '../server'
-const logMiddleware = (req: Request, res: Response, next: NextFunction) => {
+export const logMiddleware = (req: Request, res: Response, next: NextFunction) => {
   const start = new Date()
   const year = start.getFullYear()
   const month = String(start.getMonth() + 1).padStart(2, '0')
@@ -23,5 +23,3 @@ const logMiddleware = (req: Request, res: Response, next: NextFunction) => {
   })
   next()
 }
-
-export default logMiddleware

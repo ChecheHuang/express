@@ -1,5 +1,9 @@
-import logMiddleware from '@/middleware/logMiddleware'
+import { PORT } from '@/config'
+import { catchErrorMiddleware } from '@/middleware/catchErrorMiddleware'
+import { logMiddleware } from '@/middleware/logMiddleware'
 import apiRouter from '@/routes/index'
+import swaggerDocument from '@/swagger.json'
+import { getLocalIP } from '@/utils/utils'
 import bodyParser from 'body-parser'
 import chalk from 'chalk'
 import cookieParser from 'cookie-parser'
@@ -8,10 +12,6 @@ import express, { NextFunction, Request, Response } from 'express'
 import createError from 'http-errors'
 import path from 'path'
 import swaggerUi from 'swagger-ui-express'
-import { PORT } from './config'
-import { catchErrorMiddleware } from './middleware/catchErrorMiddleware'
-import swaggerDocument from './swagger.json'
-import { getLocalIP } from './utils/utils'
 export const SERVER_ADDRESS = `http://${getLocalIP()}:${PORT}`
 async function startServer() {
   const app = express()
