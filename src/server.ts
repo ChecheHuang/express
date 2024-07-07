@@ -23,8 +23,6 @@ async function startServer() {
 
   app.use(logMiddleware)
 
-  const aaa = `123`
-
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
   app.use('/api', apiRouter)
