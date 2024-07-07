@@ -74,9 +74,19 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.3"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "config": {
+      "commitizen": {
+        "path": "node_modules/cz-customizable"
+      }
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue,json}": [
-      "eslint --fix"
+      "eslint src --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0"
     ]
   }
 }
