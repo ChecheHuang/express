@@ -21,6 +21,8 @@ async function startServer() {
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(cookieParser())
 
+  const aaa = 123
+
   app.use(logMiddleware)
 
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
