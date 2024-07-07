@@ -86,7 +86,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue,json}": [
-      "eslint src --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0"
+      "npm run lint"
     ]
   }
 }
