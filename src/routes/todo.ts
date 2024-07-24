@@ -32,6 +32,8 @@ todoRouter.get(
                             }
                           ],
                    } */
+
+    res.io?.emit('onChat', '123')
     res.json(todos)
   }
 )
