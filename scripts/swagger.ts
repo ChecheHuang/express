@@ -1,5 +1,6 @@
 import swaggerAutogen from 'swagger-autogen'
 import { PORT } from '../src/config'
+import { getLocalIP } from '../src/utils/utils'
 
 const doc = {
   info: {
@@ -7,7 +8,7 @@ const doc = {
     description:
       'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYWNjb3VudCI6IuaIkeaYr-WNlOeQhiIsImlhdCI6MTY5OTM0MzQwMH0.4Zjlpgj7hMjTGZALRolpL46dN--ExyuxqJrp4xKWREc',
   },
-  host: `localhost:${PORT || 8080}`,
+  host: `${getLocalIP()}:${PORT || 8080}`,
   //   basePath: '/api',
   securityDefinitions: {
     apiKeyAuth: {
